@@ -199,3 +199,170 @@ h2 {
     text-align: center;
     color: white;
 }
+
+/* cari section */
+
+.input-cari {
+    height: 88px;
+}
+
+.input-cari:focus {
+border: none;
+}
+
+.input-cari .button-secondary {
+    width: 200px;
+    height: 88px;
+    background-size: rgba(255,255,255,0.8);
+    color: var(--primary-color);
+    font-size: 18px;
+    font-weight: 500;
+    border: none;
+    border-radius: 0 10px 0 10px;
+}
+
+.input-cari .button-primary {
+    height: 88px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    font-size: 36px;
+    font-weight: 500;
+    border-radius: 0 10px 0 10px;
+}
+
+.nav-tabs {
+    border: none;
+}
+
+.nav-tabs .nav-link {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 0 0 0 0;
+}
+
+.nav-tabs .nav-link.active {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: var(--primary-color);
+    border-radius: 0 9px 0 0;
+    font-weight: 500;
+}
+
+.nav-tabs .nav-link {
+    color: black;
+    border: none;
+}
+
+/* Rekomendasi section */
+
+.card {
+    height: 440px;
+    width: 95%;
+    border: none;
+}
+
+.card-body h4 {
+    color: black;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 0.8rem;
+}
+
+.card-body p {
+    color: #454554;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.card:hover {
+    background-image: linear-gradient(170deg, var(--primary-color), #007245, #007245, black);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .25);
+    transition: all ease-in-out .3s;
+}
+
+.card:hover .card-body h4 {
+    color: white;
+    transition: all ease-in-out .3s;
+}
+
+.card:hover .card-body p {
+    color: white;
+    transition: all ease-in-out .3s;
+}
+
+
+/* Favorit section */
+
+.button-favorit {
+    width: 238px;
+    height: 63px;
+    background-color: var(--primary-color);
+    border: none;
+    font-size: 20px;
+    font-weight: 500;
+    color: white;
+}
+
+#favorit h2 {
+    font-size: 48px;
+    font-weight: 500;
+}
+
+.card-favorit h5{
+    color: white;
+    font-size: 36px;
+    font-weight: 600;
+}
+
+.card-favorit span {
+    color: white;
+    font-size: 14px;
+}
+
+.card-favorit h6 {
+    color: white;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.card-favorit button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    width: 150px;
+    height: 45px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.card-favorit .overlay {
+    background-color: rgba(0, 0, 0, 0);
+    opacity: 0;
+    transition: all ease-in-out .3s;
+}
+
+.card-favorit .overlay:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+    opacity: 1;
+}
+
+.card-favorit img {
+    width: 70vh;
+}
+
+.button-left {
+    border: none;
+    border-radius: 50%;
+    width: 61px;
+    height: 61px;
+    background-color: var(--primary-color);
+    padding: 0;
+}
+
+.button-right {
+    border: none;
+    border-radius: 50%;
+    width: 61px;
+    height: 61px;
+    background-color: var(--primary-color);
+    padding: 0;
+}
