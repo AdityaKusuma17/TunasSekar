@@ -505,3 +505,24 @@ footer a:hover {
     transition: all ease-in .2s;
 }
 
+
+/* responsive */
+
+@media screen and (max-width : 922px) {
+    
+}
+
+@media screen and (max-width : 576px) {
+    .hero-tagline h1 {
+        line-height: 52px;
+    }
+
+    .img-hero {
+        width: 75%;
+        height: auto;
+    }
+}
+
+@media screen and (max-width : 350px) {
+    
+}
