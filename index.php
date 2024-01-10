@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,38 +35,40 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav mx-auto">
               <li class="nav-item mx-2">
-                <a class="nav-link active" aria-current="page" href="#">Beranda</a>
+                <a class="nav-link active" aria-current="page" href="#hero">Beranda</a>
               </li>
               <li class="nav-item mx-2">
-                <a class="nav-link" href="#">Layanan</a>
+                <a class="nav-link active" href="#layanan">Layanan</a>
               </li>
               <li class="nav-item mx-2">
-                <a class="nav-link" href="#">Temukan</a>
+                <a class="nav-link active" href="#rekomendasi">Rekomendasi</a>
               </li>
               <li class="nav-item mx-2">
-                <a class="nav-link" href="#">Kontak</a>
+                <a class="nav-link active" href="#kontak">Kontak</a>
               </li>
             </ul>
-
-            <div>
-                <button class="button-primary">Daftar</button>
-                <button class="button-secondary">Masuk</button>
+             <!-- Adit menambahkan php logic login-logout -->
+             <div class="login-nav">
+                <?php if (!isset($_SESSION["username"])): ?>
+                     <a href="login.php" class="m-5" id="loginLink">Login</a>
+                <?php else: ?>
+                     <a href="logout.php" id="logoutButton">Logout</a>
+                <?php endif; ?>
             </div>
-            
           </div>
         </div>
       </nav>
 
-      <!-- hero section -->
-      <section id="hero">
+     <!-- hero section -->
+     <section id="hero">
         <div class="container h-100">
             <div class="row h-100">
                 <div class="col-md-6 hero-tagline my-auto">
                     <h1>Membantu Temukan Tanaman Impian.</h1>
                     <p><span class="fw-bold">Tunas Sekar</span> hadir untuk temukan tanaman cantik untukmu, untuk di budidayakan ataupun di rawat dengan sumber terpercaya.</p>
 
-                    <button class="button-lg-primary"> Temukan Tanaman</button>
-                    <a href="#">
+                    <a class="temukan-tanaman" href="#favorit"> Temukan Tanaman</a>
+                    <a href="#favorit">
                         <img src="assets/arrow.png" alt="">
                     </a>
                 </div>
@@ -116,105 +121,7 @@
         </div>
       </section>
 
-      <!-- Search section -->
-      <section id="search" class="d-flex align-items-center">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 text-center">
-                    <h2>Temukan Tanaman Hiasmu.</h2>
-                    <p>Sekarang anda dapat meminimalisir stress,jenuh,dan bosan,dengan ratusan tanaman hias untuk anda.</p>
-                </div>
-            </div>
-            <div class="col-10 mx-auto mt-5">
-                <ul class="nav nav-tabs" id="myTab" role="tablist">
-                    <li class="nav-item" role="presentation">
-                      <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#beli" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Beli</button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                      <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#kostum" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Kostum</button>
-                    </li>
-                  </ul>
-                    <!-- DROPDOWN-->
-                  <div class="tab-content" id="myTabContent">
-                    <class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
-                        <div class="input-group input-cari mb-3">
-                            <!-- DROPDOWN TIPE TANAMAN -->
-                            <button class="button-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <img src="assets/tanaman icon.png" width="20px">
-                                Tipe Tanaman</button>
-                            <ul class="dropdown-menu">
-                              <li><a class="dropdown-item" href="#">Action</a></li>
-                              <li><a class="dropdown-item" href="#">Another action</a></li>
-                              <li><a class="dropdown-item" href="#">Something else here</a></li>
-                              <li><hr class="dropdown-divider"></li>
-                              <li><a class="dropdown-item" href="#">Separated link</a></li>
-                            </ul>
-    
-                            <!-- DROPDOWN HARGA -->
-                            <button class="button-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <img src="assets/harga icon.png" width="20px">
-                                Range Harga</button>
-                            <ul class="dropdown-menu">
-                              <li><a class="dropdown-item" href="#">Action</a></li>
-                              <li><a class="dropdown-item" href="#">Another action</a></li>
-                              <li><a class="dropdown-item" href="#">Something else here</a></li>
-                              <li><hr class="dropdown-divider"></li>
-                              <li><a class="dropdown-item" href="#">Separated link</a></li>
-                            </ul>
-                            <input type="text" class="form-control" aria-label="Text input with dropdown button" placeholder="cari berdasarkan nama,jenis tanaman">
-                            <button class="button-primary" type="button" id="button-addon2">Cari</button>
-                        </div>
-                    </div>
-                    <!-- DROPDOWN KOSTUM -->
-                    <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
-                        <div class="input-group input-cari mb-3">
-                            <!-- DROPDOWN TIPE TANAMAN -->
-                            <button class="button-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <img src="assets/tanaman icon.png" width="20px">
-                                Tipe Tanaman</button>
-                            <ul class="dropdown-menu">
-                              <li><a class="dropdown-item" href="#">Action</a></li>
-                              <li><a class="dropdown-item" href="#">Another action</a></li>
-                              <li><a class="dropdown-item" href="#">Something else here</a></li>
-                              <li><hr class="dropdown-divider"></li>
-                              <li><a class="dropdown-item" href="#">Separated link</a></li>
-                            </ul>
-    
-                            <!-- DROPDOWN HARGA -->
-                            <button class="button-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <img src="assets/harga icon.png" width="20px">
-                                Range Harga</button>
-                            <ul class="dropdown-menu">
-                              <li><a class="dropdown-item" href="#">Action</a></li>
-                              <li><a class="dropdown-item" href="#">Another action</a></li>
-                              <li><a class="dropdown-item" href="#">Something else here</a></li>
-                              <li><hr class="dropdown-divider"></li>
-                              <li><a class="dropdown-item" href="#">Separated link</a></li>
-                            </ul>
-                            <input type="text" class="form-control" aria-label="Text input with dropdown button" placeholder="cari berdasarkan nama,jenis tanaman">
-                            <button class="button-primary" type="button" id="button-addon2">Cari</button>
-                        </div>
-                    </div>
-
-                    <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
-                        <div class="input-group input-cari mb-3">
-                            <!-- DROPDOWN TIPE TANAMAN -->
-                            <button class="button-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <img src="assets/tanaman icon.png" width="20px">
-                                Tipe Tanaman</button>
-                            <ul class="dropdown-menu">
-                              <li><a class="dropdown-item" href="#">Action</a></li>
-                              <li><a class="dropdown-item" href="#">Another action</a></li>
-                              <li><a class="dropdown-item" href="#">Something else here</a></li>
-                              <li><hr class="dropdown-divider"></li>
-                              <li><a class="dropdown-item" href="#">Separated link</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                  </div>
-            </div>
-        </div>
-      </section>
+      
 
       <!-- Rekomendasi Section -->
       <section id="rekomendasi">
@@ -229,8 +136,7 @@
                     <div class="card p-2" style="width: 22rem;">
                     <img src="assets/card.jpeg">
                     <div class="card-body">
-                        <h4>IDR.15.000.00</h4>
-                        <p class="mb-4 lh-sm">Nama Tanaman <br> <span class="text-success">Ready</span></p>
+                        <p class="mb-4 lh-sm">Jeruk Limao<br> <span class="text-success">Ready</span></p>
                     </div>
                 </div>
                 </div>
@@ -239,8 +145,7 @@
                     <div class="card p-2" style="width: 22rem;">
                     <img src="assets/card.jpeg">
                     <div class="card-body">
-                        <h4>IDR.15.000.00</h4>
-                        <p class="mb-4 lh-sm">Nama Tanaman <br> <span class="text-success">Ready</span></p>
+                        <p class="mb-4 lh-sm"><br>Cocor Bebek<br><span class="text-success">Ready</span></p>
                     </div>
                 </div>
                 </div>
@@ -249,8 +154,7 @@
                     <div class="card p-2" style="width: 22rem;">
                     <img src="assets/card.jpeg">
                     <div class="card-body">
-                        <h4>IDR.15.000.00</h4>
-                        <p class="mb-4 lh-sm">Nama Tanaman <br> <span class="text-success">Ready</span></p>
+                        <p class="mb-4 lh-sm">Lidah Mertua<br> <span class="text-success">Ready</span></p>
                     </div>
                 </div>
                 </div>
@@ -259,8 +163,7 @@
                     <div class="card p-2" style="width: 22rem;">
                     <img src="assets/card.jpeg">
                     <div class="card-body">
-                        <h4>IDR.15.000.00</h4>
-                        <p class="mb-4 lh-sm">Nama Tanaman <br> <span class="text-success">Ready</span></p>
+                        <p class="mb-4 lh-sm">Kaktus<br> <span class="text-success">Ready</span></p>
                     </div>
                 </div>
                 </div>
@@ -269,8 +172,7 @@
                     <div class="card p-2" style="width: 22rem;">
                     <img src="assets/card.jpeg">
                     <div class="card-body">
-                        <h4>IDR.15.000.00</h4>
-                        <p class="mb-4 lh-sm">Nama Tanaman <br> <span class="text-success">Ready</span></p>
+                        <p class="mb-4 lh-sm">Blego<br> <span class="text-success">Ready</span></p>
                     </div>
                 </div>
                 </div>
@@ -279,8 +181,7 @@
                     <div class="card p-2" style="width: 22rem;">
                     <img src="assets/card.jpeg">
                     <div class="card-body">
-                        <h4>IDR.15.000.00</h4>
-                        <p class="mb-4 lh-sm">Nama Tanaman <br> <span class="text-success">Ready</span></p>
+                        <p class="mb-4 lh-sm">Lidah Buaya<br> <span class="text-success">Ready</span></p>
                     </div>
                 </div>
                 </div>
@@ -291,14 +192,12 @@
       <!-- carousel section -->
     <section id="favorit" class="mt-5 overflow-hidden">
         <div class="container position-relative">
-            <div class="row mb-4">
+            <div class="d-flex justify-content-between">
                 <div class="col-9">
                     <h2>Tanaman Favorit</h2>
                 </div>
-                <div class="col-3">
-                    <button class="button-favorit">lihat semua..
-                        <img src="assets/arrow.png" alt="" class="ms-4" height="20px">
-                    </button>        
+                <div class="">
+                    <a class="lihat-semua" href="tanaman.html"> Lihat Semua</a>
                 </div>
             </div>
             <div class="container position-relative">
@@ -390,14 +289,14 @@
                                 <div>
                                     <img src="assets/lokasi icon.png" alt="">
                                 </div>
-                                <a href="https://maps.app.goo.gl/YjMvD3WZX6Mr84Sk7?g_st=iw">Jl. Hayam Wuruk No.103H, Sumerta Kelod, Kec. Denpasar Timur. kota Denpasar,Bali, Indonesia.</a>
+                                <a href="https://maps.app.goo.gl/YjMvD3WZX6Mr84Sk7?g_st=iw" target="_blank">Jl. Hayam Wuruk No.103H, Sumerta Kelod, Kec. Denpasar Timur. kota Denpasar,Bali, Indonesia.</a>
                             </div>
 
                             <div class="mb-3 d-flex align-items-center">
                                 <div>
                                     <img src="assets/kontak icon.png" alt="">
                                 </div>
-                                <a href="#">08123984764 (celuller)</a>
+                                <a href="#" >08123984764 (celuller)</a>
                             </div>
 
                             <div class="mb-3 d-flex align-items-center">
@@ -408,21 +307,21 @@
                             </div>
                         </div>
                         <h6>Social Media</h6>
-                            <a href="#" class="me-3"><img src="assets/facebook icon.png" alt=""></a>
-                            <a href="#" class="me-3"><img src="assets/instagram icon.png" alt=""></a>
-                            <a href="#" class="linktunassekar">tunassekar.bali</a>
+                            <a href="#" class="me-3" target="_blank"><img src="assets/facebook icon.png" alt=""></a>
+                            <a href="#" class="me-3" target="_blank"><img src="assets/instagram icon.png" alt=""></a>
+                            <a href="#" class="linktunassekar" target="_blank">tunassekar.bali</a>
                         </div>
                         <div class="col-md-6">
                         <div class="card-kontak w-100">
-                            <form>
+                            <form name="submit-to-google-sheet">
                                 <h2>Butuh Bantuan?</h2>
                                 <div class="form-floating mb-3">
-                                    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                                    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"  name="email">
                                     <label for="floatingInput" class="d-flex align-items-center">Masukkan alamat email disini..</label>
                                   </div>
                                   <div class="form-floating mb-3">
-                                    <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com">
-                                    <label for="floatingInput" class="d-flex align-items-center">Keluh kesah anda..</label>
+                                    <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com" name="keluhan">
+                                    <label for="floatingInput" class="d-flex align-items-center" >Keluh kesah anda..</label>
                                   </div>
                                   <button class="button-kontak" type="submit">kirim</button>
                             </form>
@@ -432,6 +331,8 @@
             </div>
         </div>
     </section>
+
+    
 <!-- footer -->
     <footer class="d-flex align-items-center position-relative">
         <div class="container-fluid">
@@ -456,6 +357,23 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzi2DSIZcKTFqeX55hscitUTqzCyMdPBK3xYoFjYxt1WacjgCjmjUlmbwfjmoWjP7gG/exec'
+        const form = document.forms['submit-to-google-sheet']
+      
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => {
+                    console.log('Success!', response);
+                    alert('Data berhasil dikirim!');
+                    form.reset();
+                })
+                .catch(error => console.error('Error!', error.message))
+        })
+      </script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </body>
